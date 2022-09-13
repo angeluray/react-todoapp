@@ -37,11 +37,10 @@ const TodoItem = props => {
       }, [])
       
     return (
-      <li className={styles.item}>
+      <li>
         <div onDoubleClick={handleEditing} style={viewMode}>
           <input
             type="checkbox"
-            className={styles.checkbox}
             checked={completed}
             onChange={() => props.handleChangeProps(id)}
           />
@@ -51,7 +50,6 @@ const TodoItem = props => {
         <input
           type="text"
           style={editMode}
-          className={styles.textInput}
           value={title}
           onChange={e => {
             props.setUpdate(e.target.value, id)
